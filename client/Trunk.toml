@@ -1,0 +1,11 @@
+# trunkrs.dev
+
+[[proxy]]
+rewrite = "/api/"
+backend = "http://localhost:8000/"
+
+[build]
+release = true
+
+[serve]
+no_autoreload = true

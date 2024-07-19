@@ -1,0 +1,23 @@
+CREATE TABLE articles (
+    id SERIAL NOT NULL,
+    title CHAR VARYING(255) NOT NULL,
+    content TEXT NOT NULL,
+    date DATE NOT NULL CURRENT_DATE,
+    PRIMARY KEY(id)
+);
+
+CREATE TABLE comments (
+    id SERIAL NOT NULL,
+    user_id INT NOT NULL,
+    content CHAR VARYING(1024) NOT NULL,
+    date DATE NOT NULL DEFAULT CURRENT_DATE,
+    article INT NOT NULL,
+    PRIMARY KEY(id)
+);
+
+CREATE TABLE users(
+    id INT NOT NULL,
+    name CHAR VARYING(255) NOT NULL,
+    avatar_url CHAR VARYING(255) NOT NULL,
+    PRIMARY KEY(id)
+);
